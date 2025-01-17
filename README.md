@@ -12,12 +12,17 @@ Download and Install [NodeJS](https://nodejs.org/en/download) and [Mysql](https:
     ```bash
     npm run build
     ```
+3. Run Migration (Dont't forget to create database first)
+    ```bash
+    npm run db:migrate
+    ```
 2. Start App
 
     ```bash
     npm run start
     ```
-3. Dev Mode
+    -----
+- Dev Mode
 
     ```bash
     npm run dev
@@ -32,6 +37,7 @@ DATABASE_PORT=3306
 DATABASE_NAME=artatix-test
 DATABSE_PASSWORD=
 DATABASE_USER=root
+PORT=
 ```
 ## 📖 API Reference
 ## Auth
