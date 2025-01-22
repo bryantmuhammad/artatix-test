@@ -13,6 +13,7 @@ import mainRoute from "./routes/index";
 import path from "path";
 import rootPath from "get-root-path";
 import multer from "multer";
+import env from "./schema/env";
 
 type userType = typeof usersTable.$inferInsert;
 const app = express();
@@ -20,7 +21,7 @@ app.use(express.json());
 
 app.use(cors());
 
-const PORT = process.env.PORT || 8080;
+const PORT = env.PORT || 8080;
 
 app.use(mainRoute);
 app.use("/image", express.static(path.join(rootPath, "image")));
