@@ -1,12 +1,12 @@
 import "dotenv/config";
 import { defineConfig } from "drizzle-kit";
 
-import databaseCredential from "./src/utils/database";
-
 export default defineConfig({
   out: "./src/db/migration",
   schema: "./src/db/schema.ts",
-  dialect: "mysql",
-  dbCredentials: databaseCredential,
+  dialect: "postgresql",
   strict: true,
+  dbCredentials: {
+    url: process.env.DATABASE_URL!,
+  },
 });

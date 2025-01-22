@@ -17,9 +17,11 @@ export const getAllTalent = async () => {
 export const saveTalent = async (
   talent: talentType
 ): Promise<number | void> => {
-  const newTalent = await db.insert(talentTable).values(talent);
+  const newTalent = await db.insert(talentTable).values(talent).returning({
+    id: talentTable.id,
+  });
 
-  return newTalent[0].insertId;
+  return newTalent[0].id;
 };
 
 export const getOneTalent = async (id: number) => {
