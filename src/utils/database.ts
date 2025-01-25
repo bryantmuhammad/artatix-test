@@ -2,14 +2,14 @@ import "dotenv/config";
 import { IDatabaseCredential } from "../Interface";
 
 const databaseCredential: IDatabaseCredential = {
-  host: process.env.DATABASE_HOST || "localhost",
-  user: process.env.DATABASE_USER || "root",
-  database: process.env.DATABASE_NAME || "artatix-test",
-  port: parseInt(process.env.DATABASE_PORT || "3306"),
+  host: process.env.DB_HOST!,
+  user: process.env.DB_USER!,
+  database: process.env.DB_NAME!,
+  port: parseInt(process.env.DB_PORT!),
 };
 
-if (process.env.DATABASE_PASSWORD || process.env.DATABASE_PASSWORD !== "") {
-  databaseCredential.password = process.env.DATABASE_PASSWORD;
+if (process.env.MYSQL_ROOT_PASSWORD || process.env.MYSQL_ROOT_PASSWORD !== "") {
+  databaseCredential.password = process.env.MYSQL_ROOT_PASSWORD;
 }
 
 export default databaseCredential;
