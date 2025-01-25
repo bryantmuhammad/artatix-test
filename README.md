@@ -27,17 +27,34 @@ Download and Install [NodeJS](https://nodejs.org/en/download) and [Mysql](https:
     ```bash
     npm run dev
     ```
+    -----
+- Using Docker
+
+    ```bash
+    cd docker
+    docker-compose up
+    ```
 
 ## 🌱 Env Variables
 
 Copy .env.example to .env example below here: 
+##### Using local DB
 ```
 DATABASE_HOST=localhost
 DATABASE_PORT=3306
 DATABASE_NAME=artatix-test
 DATABSE_PASSWORD=
 DATABASE_USER=root
-PORT=
+PORT=8080
+```
+##### Using Docker
+```
+DATABASE_HOST=db #DB IMAGE NAME
+DATABASE_PORT=3306
+DATABASE_NAME=artatix-test
+DATABSE_PASSWORD=secret
+DATABASE_USER=root
+PORT=8080
 ```
 ## 📖 API Reference
 ## Auth
